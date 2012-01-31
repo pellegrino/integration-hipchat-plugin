@@ -11,8 +11,7 @@ namespace :integration do
 
     task :finish do
       user = `whoami`
-      `MESSAGE="@all User #{user} finished to integrate" bundle exec rake hipchat:send` 
-      `MESSAGE="Well done!" bundle exec rake hipchat:send` 
+      `MESSAGE="@all User #{user} finished to integrate. Well done pro!" bundle exec rake hipchat:send` 
     end 
  
   end 
