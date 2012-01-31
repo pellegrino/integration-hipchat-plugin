@@ -21,6 +21,7 @@ Don't forget also to configure Rails.root/config/hipchat.yml with the following 
      room: "Your room"
      user: "Your name" # Default to `whoami`
      notify: true # Defaults to false
+     appname: "Your project name" # used to create announce messages
 
 ## Tasks provided 
 
