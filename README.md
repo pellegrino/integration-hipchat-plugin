@@ -13,7 +13,16 @@ Add this project to your gemfile, as you are probably used to do in a bundler co
         gem 'integration-hipchat'      
       end 
 
-After bundling your app, you need to change your INTEGRATION\_TASKS adding your hipchat tasks. 
+After bundling your app, you need to change your INTEGRATION\_TASKS adding your hipchat tasks like in the example below 
+
+      INTEGRATION_TASKS = %w(
+      integration:start
+      db:migrate
+      integration:hipchat:announce
+      spec
+      integration:coverage_verify
+      integration:hipchat:finish
+      integration:finish)
 
 Don't forget also to configure Rails.root/config/hipchat.yml with the following variables:
 
