@@ -5,12 +5,14 @@ namespace :integration do
   namespace :hipchat do
     desc "Announce the begining of the integration process to a hipchat room" 
     task :announce do
-      task "hipchat:send", "User started to integrate" 
+      user = `whoami`
+      `MESSAGE="@all User #{user} started to integrate" bundle exec rake hipchat:send` 
     end 
 
     task :finish do
-      task "hipchat:send", "User finished to integrate" 
-      task "hipchat:send", "Well done!" 
+      user = `whoami`
+      `MESSAGE="@all User #{user} finished to integrate" bundle exec rake hipchat:send` 
+      `MESSAGE="Well done!" bundle exec rake hipchat:send` 
     end 
  
   end 
